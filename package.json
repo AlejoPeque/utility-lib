@@ -1,0 +1,49 @@
+{
+	"name": "utility-lib",
+	"version": "0.0.1",
+	"type": "module",
+	"main": "./dist/utility-lib.umd.cjs",
+	"types": "./dist/src/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/utility-lib.js",
+			"export": "./dist/utility-lib.umd.cjs"
+		}
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsc && vite build",
+		"lint": "eslint . --ext .ts",
+		"check:types": "tsc --noEmit",
+		"prepare": "husky install",
+		"test": "vitest run --coverage",
+		"test:watch": "vitest --watch",
+		"test:mutation": "stryker run"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^19.3.0",
+		"@commitlint/config-conventional": "^19.2.2",
+		"@stryker-mutator/core": "^8.2.6",
+		"@stryker-mutator/vitest-runner": "^8.2.6",
+		"@types/node": "^20.14.0",
+		"@typescript-eslint/eslint-plugin": "^6.4.0",
+		"@vitest/coverage-v8": "^1.6.0",
+		"eslint": "^8.0.1",
+		"eslint-config-standard-with-typescript": "^43.0.1",
+		"eslint-plugin-import": "^2.25.2",
+		"eslint-plugin-n": "^15.0.0 || ^16.0.0",
+		"eslint-plugin-promise": "^6.0.0",
+		"eslint-plugin-simple-import-sort": "^12.1.0",
+		"husky": "^8.0.0",
+		"typescript": "5.4.5",
+		"vite": "^5.2.13",
+		"vite-plugin-dts": "^3.9.1",
+		"vite-tsconfig-paths": "^4.3.2",
+		"vitest": "^1.6.0"
+	}
+}
