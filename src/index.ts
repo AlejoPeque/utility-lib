@@ -1,2 +1,3 @@
-// eslint-disable-next-line no-console
-console.log('Prueba')
+export * from './check'
+export * from './json'
+export * from './order'
