@@ -1,6 +1,10 @@
 import { isArray, isEmpty, isNumber, isObject, isString } from '@/check'
 
-export function orderById<T> (array: T[], key: keyof T, isAsc: boolean = true): T[] {
+export function orderById<T extends object> (
+  array: T[],
+  key: keyof T,
+  isAsc: boolean = true
+): T[] {
   if (isEmpty(array)) return array // If the array is empty, return the array
 
   if (!isArray(array)) throw new Error('The first argument must be an array') // Verify that the first argument is an array
