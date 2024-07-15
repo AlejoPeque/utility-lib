@@ -3,7 +3,6 @@ import { orderById } from '..'
 /*
     Test for orderById
 */
-
 describe('orderById', () => {
   it('should return an object array ordered by the key', () => {
     expect(orderById([{ id: 2 }, { id: 1 }, { id: 3 }], 'id')).toEqual([{ id: 1 }, { id: 2 }, { id: 3 }])
