@@ -1,6 +1,6 @@
 import { isArray, isEmpty, isNumber, isObject, isString } from '@/check'
 
-export function orderById<T extends object> (
+export function orderById<T extends object>(
   array: T[],
   key: keyof T,
   isAsc: boolean = true
@@ -11,7 +11,9 @@ export function orderById<T extends object> (
 
   if (!isObject(array[0])) throw new Error('The array must contain objects') // Verify that the array contains objects
 
-  if (!isString(array[0][key]) && !isNumber(array[0][key])) throw new Error('The key must be a string or a number') // Verify that the key is a string or a number
+  if (!isString(array[0][key]) && !isNumber(array[0][key])) {
+    throw new Error('The key must be a string or a number')
+  } // Verify that the key is a string or a number
 
   return array.sort((a, b) => {
     const valueA = a[key]
