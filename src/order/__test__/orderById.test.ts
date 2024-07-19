@@ -68,4 +68,9 @@ describe('orderById', () => {
       orderById([{ id: 'b' }, { id: 'a' }, { id: 'c' }], 'id', true)
     ).toEqual([{ id: 'a' }, { id: 'b' }, { id: 'c' }])
   })
+  it('should return an order array of strings in order descending', () => {
+    expect(
+      orderById([{ id: 'b' }, { id: 'a' }, { id: 'c' }], 'id', false)
+    ).toEqual([{ id: 'c' }, { id: 'b' }, { id: 'a' }])
+  })
 })
