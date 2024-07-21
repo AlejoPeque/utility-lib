@@ -1,4 +1,3 @@
-
 /*
     Test for filterById
  */
@@ -73,7 +72,9 @@ describe('filterById', () => {
     const item = 2
 
     // @ts-expect-error we need to test this usecase
-    expect(() => filterById(input, key, item)).toThrow('The first argument must be an array')
+    expect(() => filterById(input, key, item)).toThrow(
+      'The first argument must be an array'
+    )
   })
 
   it('should throw an error when the item is not a string or a number', () => {
@@ -82,7 +83,9 @@ describe('filterById', () => {
     const item = { obj: 'not a string or number' }
 
     // @ts-expect-error we need to test this usecase
-    expect(() => filterById(input, key, item)).toThrow('The item must be a string or a number')
+    expect(() => filterById(input, key, item)).toThrow(
+      'The item must be a string or a number'
+    )
   })
 
   // Caso de prueba con claves no existentes
@@ -92,13 +95,17 @@ describe('filterById', () => {
     const item = 2
 
     // @ts-expect-error we need to test this usecase
-    expect(() => filterById(input, key, item)).toThrow('The filter key does not exist in the object')
+    expect(() => filterById(input, key, item)).toThrow(
+      'The filter key does not exist in the object'
+    )
   })
 
   // Caso de prueba para verificar el error cuando el primer argumento no es un arreglo
   it('should throw an error if the first argument is not an array', () => {
     // @ts-expect-error we need to test this usecase
-    expect(() => filterById('notAnArray', 'id', 2)).toThrow('The first argument must be an array')
+    expect(() => filterById('notAnArray', 'id', 2)).toThrow(
+      'The first argument must be an array'
+    )
   })
 
   // Caso de prueba para verificar el error cuando la clave no es una cadena o un número
@@ -107,12 +114,16 @@ describe('filterById', () => {
     const key = 'id'
     const item = 2
 
-    expect(() => filterById(input, key, item)).toThrow('The key must be a string or a number')
+    expect(() => filterById(input, key, item)).toThrow(
+      'The key must be a string or a number'
+    )
   })
 
   // Caso de prueba para verificar el error cuando el item no es una cadena o un número
   it('should throw an error if the item is not a string or number', () => {
     // @ts-expect-error we need to test this usecase
-    expect(() => filterById([{ id: 2 }], 'id', {})).toThrow('The item must be a string or a number')
+    expect(() => filterById([{ id: 2 }], 'id', {})).toThrow(
+      'The item must be a string or a number'
+    )
   })
 })
