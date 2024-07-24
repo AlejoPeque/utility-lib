@@ -1,6 +1,6 @@
 import { isArray, isEmpty, isNumber, isObject, isString } from '@/check'
 
-export function orderById<T extends object>(
+export function orderById<T extends object> (
   array: T[],
   key: keyof T,
   isAsc: boolean = true
