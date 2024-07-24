@@ -7,5 +7,6 @@ export const merge = <T extends object, U extends object>(
   if (!isObject(obj1) || !isObject(obj2)) {
     return null
   }
+
   return { ...obj1, ...obj2 }
 }

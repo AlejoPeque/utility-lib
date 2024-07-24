@@ -1,8 +1,9 @@
 import { isArray, isEmpty, isNumber, isString } from '@/check'
+import { isNullOrUndefined } from '@/check/isNullOrUndefined'
 
 type Item = string | number
 
-export function filterById<T extends object>(
+export function filterById<T extends object> (
   array: T[],
   key: keyof T,
   item: Item
@@ -20,8 +21,7 @@ export function filterById<T extends object>(
 
   // Ajustar la validación para permitir null y undefined, pero verificar que sea string o number cuando no lo sea
   if (
-    keyValue !== null &&
-    keyValue !== undefined &&
+    !isNullOrUndefined(keyValue) &&
     !isString(keyValue) &&
     !isNumber(keyValue)
   ) {
