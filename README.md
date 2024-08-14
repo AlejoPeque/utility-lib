@@ -1,16 +1,26 @@
-# Utility Lib Primitives & Objects
-desc
-## Instalacion
+# Utility Lib Primitives & Objects 📚
+
+This utility library is designed to facilitate the handling of objects and primitives in TypeScript. It provides a versatile set of functions for common operations such as filtering, combining and organizing data. Use cases include:
+
+- **Filtering by ID:** Allows you to select specific items from an array of objects based on their unique identifiers.
+- **Object Merge:** Facilitates the combination of two or more objects into one, merging their properties and values in an intuitive way.
+- **Sort by ID:** Provides the ability to sort arrays of objects by their identifiers, ensuring an organized and consistent data structure.
+- **Transform Objects to JSON:** Converts an object literal into a formatted JSON string, improving readability and data presentation.
+
+Ideal for simplifying repetitive tasks and improving code readability, this library focuses on providing fast and efficient solutions for data handling.
+
+## Instalacion 📦
 
 ```CMD
 npm install utility-primitive-object
 ```
 
-## Uso
+## Uso 🎢
 
 **filterById**
-```Javascript
-import { filterById } from 'utility-lib-p-o'
+
+```TypeScript
+import { filterById } from 'utility-primitive-object'
 
 const object = [{ id: 2 }, { id: 1 }, { id: 3 }]
 
@@ -18,9 +28,10 @@ const res = filterById(object, "id", 2) // res = [{ id: 2 }]
 ```
 
 **merge**
-```Javascript
+
+```TypeScript
 // Example 1
-import { merge } from 'utility-lib-p-o'
+import { merge } from 'utility-primitive-object'
 
 const obj1 = { foo: 'bar' }
 const obj2 = { fob: 'baz' }
@@ -35,8 +46,9 @@ const res = merge(obj3, obj4) // { foo: 'baz' }
 ```
 
 **orderById**
-```Javascript
-import { orderById } from 'utility-lib-p-o'
+
+```TypeScript
+import { orderById } from 'utility-primitive-object'
 
 const obj = [{ id: 2 }, { id: 1 }, { id: 3 }]
 
@@ -56,8 +68,9 @@ const res2 = orderById(obj, 'id', false) // des
 ```
 
 **prettyPrint**
-```Javascript
-import { prettyPrint } from 'utility-lib-p-o'
+
+```TypeScript
+import { prettyPrint } from 'utility-primitive-object'
 
 res = {
   "userId": 1,
@@ -66,7 +79,7 @@ res = {
   "completed": false
 }
 
-prettyPrint(res) 
+prettyPrint(res)
 /*
     '{
         "userId": 1,
@@ -77,13 +90,17 @@ prettyPrint(res)
 */
 ```
 
-### Check Types
+### Check Types 🧐
 
-Function                   | Description
----------------------------|-----------------------------------------
-`isArray(value)`           | Check if the given value is an array.
-`isNullOrUndefined(value)` | Check if the given value is null or undefined.
-`isNumber(value)`          | Check if the given value is a number.
-`isString(value)`          | Check if the given value is a string.
-`isObject(value)`          | Check if the given value is a object.
-`isEmpty(value)`           | Check if the given value is empty  
+| Function                   | Description                                    |
+| -------------------------- | ---------------------------------------------- |
+| `isArray(value)`           | Check if the given value is an array.          |
+| `isNullOrUndefined(value)` | Check if the given value is null or undefined. |
+| `isNumber(value)`          | Check if the given value is a number.          |
+| `isString(value)`          | Check if the given value is a string.          |
+| `isObject(value)`          | Check if the given value is a object.          |
+| `isEmpty(value)`           | Check if the given value is empty              |
+
+---
+
+Thanks for using this library! 🚀

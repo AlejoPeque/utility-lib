@@ -5,15 +5,12 @@ export function orderById<T extends object> (
   key: keyof T,
   isAsc: boolean = true
 ): T[] {
-  if (isEmpty(array)) return array // If the array is empty, return the array
-
-  if (!isArray(array)) throw new Error('The first argument must be an array') // Verify that the first argument is an array
-
-  if (!isObject(array[0])) throw new Error('The array must contain objects') // Verify that the array contains objects
-
+  if (isEmpty(array)) return array
+  if (!isArray(array)) throw new Error('The first argument must be an array')
+  if (!isObject(array[0])) throw new Error('The array must contain objects')
   if (!isString(array[0][key]) && !isNumber(array[0][key])) {
     throw new Error('The key must be a string or a number')
-  } // Verify that the key is a string or a number
+  }
 
   return array.sort((a, b) => {
     const valueA = a[key]
