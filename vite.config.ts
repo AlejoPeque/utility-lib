@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'utility-lib'
+      name: 'utility-primitive-object'
     },
     sourcemap: true,
     target: 'es6',
@@ -26,7 +26,10 @@ export default defineConfig({
     }
   },
   plugins: [
-    dts({ outDir: 'dist', exclude: ['**/*.test.ts', 'test/', 'vitest.config.*'] }),
+    dts({
+      outDir: 'dist',
+      exclude: ['**/*.test.ts', 'test/', 'vitest.config.*']
+    }),
     viteTsConfigPaths()
   ]
 })
